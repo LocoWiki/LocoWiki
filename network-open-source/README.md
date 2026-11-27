@@ -24,7 +24,8 @@
 
 - 时维科技：达妙 USB 转 CAN、灵足电机和 MC02 驱动 [DM_RS](https://github.com/zeitvex/DM_RS)
 - 晋中信息学院：MC02 宇树电机驱动 [MC02_for_Unitree](https://github.com/Lain-Ego0/MC02_for_Unitree)
-- 桂林航天工业学院：达妙 H7 常用电机、遥控器和底盘控制库 [DM02_control](https://github.com/heartpain-kong/DM02_control)
+- 桂林航天工业学院：基于STM32H723主控RC机器人控制框架 [LGRobotSystem](https://github.com/heartpain-kong/LGRobotSystem)
+- 桂林航天工业学院：基于STM32H723主控RM机器人控制框架 [TSRobotSystem](https://github.com/heartpain-kong/TSRobotSystem)
 
 ## 🎯 赛题功能性开源
 
@@ -66,6 +67,7 @@
 | 全身遥操作与模仿学习 | [TWIST](paper-reproductions/twist.md) | [GitHub](https://github.com/YanjieZe/TWIST) | Unitree G1 全身遥操作与教师-学生模仿学习系统 |
 | 动作重定向 | [GMR](paper-reproductions/gmr.md) | [GitHub](https://github.com/YanjieZe/GMR) | 面向多种人形机器人的 CPU 实时通用动作重定向器 |
 | 遥操作与数据采集 | [TWIST2](paper-reproductions/twist2.md) | [GitHub](https://github.com/amazon-far/TWIST2) | 基于 VR 的可扩展人形机器人全身数据采集系统 |
+| 四足深度感知 | [mjlab_MGDP](paper-reproductions/mjlab-mgdp.md) | [GitHub](https://github.com/heartpain-kong/mjlab_MGDP) | 基于 mjlab+MGDP 深度感知越障，CNN/GRU 感知特征 |
 
 ### 工具与开发框架
 

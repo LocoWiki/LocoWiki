@@ -24,7 +24,8 @@ This page is the open-source resource index. Complete competition solutions, cor
 
 - ZeitVex: Damiao USB-to-CAN, Lingzu motor, and MC02 driver [DM_RS](https://github.com/zeitvex/DM_RS)
 - Jinzhong College of Information: MC02 Unitree motor driver [MC02_for_Unitree](https://github.com/Lain-Ego0/MC02_for_Unitree)
-- Guilin University of Aerospace Technology: common Damiao H7 motor, remote-control, and chassis libraries [DM02_control](https://github.com/heartpain-kong/DM02_control)
+- Guilin University of Aerospace Technology: STM32H723-based robot control framework for ROBOCON [LGRobotSystem](https://github.com/heartpain-kong/LGRobotSystem)
+- Guilin University of Aerospace Technology: STM32H723-based robot control framework for RoboMaster [TSRobotSystem](https://github.com/heartpain-kong/TSRobotSystem)
 
 ## 🎯 Competition Resources
 
@@ -64,6 +65,7 @@ Project articles are grouped by their main deliverable: new methods and reproduc
 | Whole-body teleoperation and imitation | [TWIST](paper-reproductions/twist.md) | [GitHub](https://github.com/YanjieZe/TWIST) | Unitree G1 whole-body teleoperation with teacher-student imitation learning |
 | Motion retargeting | [GMR](paper-reproductions/gmr.md) | [GitHub](https://github.com/YanjieZe/GMR) | CPU-real-time general motion retargeting for multiple humanoid embodiments |
 | Teleoperation and data collection | [TWIST2](paper-reproductions/twist2.md) | [GitHub](https://github.com/amazon-far/TWIST2) | Scalable VR-based whole-body humanoid data-collection system |
+| Quadruped depth perception | [mjlab_MGDP](paper-reproductions/mjlab-mgdp.md) | [GitHub](https://github.com/heartpain-kong/mjlab_MGDP) | Depth-aware obstacle training on mjlab + MGDP, with CNN/GRU perception features |
 
 ### Development Tools and Frameworks
 
