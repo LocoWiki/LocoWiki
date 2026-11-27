@@ -583,5 +583,23 @@
     "notes": "把参数表、运动学树和根网格直接编译为 MuJoCo MJCF：论文报告 12 自由度四足约 50 ms、29 自由度人形约 202 ms；用 114 个集成执行器和 49 份机器人描述拟合质量、减速比、体积和转子惯量趋势，并做可制造性筛选。四台现成机器人孪生模型的质量几何平均倍误差为 1.10×，并用同一两阶段强化学习课程比较三台四足设计。",
     "query": "Draft A Parametric Tool for Robot Design Exploration 2609.38405",
     "url": "https://arxiv.org/abs/2609.38405"
+  },
+  {
+    "group": "其他",
+    "title": "Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap",
+    "venue": "arXiv",
+    "year": 2026,
+    "notes": "将物理学中的重整化思想引入 sim-to-real：模拟器参数不该照抄真机数值，而应取依赖仿真频率和分辨率的“有效值”，才能让仿真与真机最接近。论文闭式推导了有限仿真频率下 PD 控制的有效阻尼与惯量修正，覆盖刚体 PD 控制、绳索和水下游动，并给出 4 步实操流程。",
+    "query": "Effective Parameters Real Behavior Renormalization for Robotics 2607.24079",
+    "url": "https://arxiv.org/abs/2607.24079"
+  },
+  {
+    "group": "框架与工具",
+    "title": "Elastra: A Simulation Framework for Elastic Bodies",
+    "venue": "arXiv",
+    "year": 2026,
+    "notes": "MuJoCo 弹性表面仿真框架，可模拟床垫、蹦床等受力会下陷回弹的支撑面，并用真实床垫的载荷曲线验证；附带在弹性表面上训练机器人（如 Unitree G1 起身）的示例。",
+    "query": "Elastra A Simulation Framework for Elastic Bodies 2611.15112",
+    "url": "https://arxiv.org/abs/2611.15112"
   }
 ]

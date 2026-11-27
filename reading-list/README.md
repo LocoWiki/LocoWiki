@@ -63,6 +63,7 @@ python3 scripts/resolve_paper_links.py --update-index
 - Sim-to-Real: Learning Agile Locomotion for Quadruped Robots（2018）— [原文 PDF](https://arxiv.org/pdf/1804.10332.pdf)
 - RMA: Rapid Motor Adaptation for Legged Robots（RSS 2021）— [原文 PDF](https://arxiv.org/pdf/2107.04034.pdf)
 - Actuator Reality Shaping for Zero-Shot Sim-to-Real Robot Learning（2026）— [原文 PDF](https://arxiv.org/pdf/2607.02205.pdf)
+- Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap（arXiv 2026）— [原文页面](https://arxiv.org/abs/2607.24079)
 
 ### 感知 / 建图
 - Learning robust perceptive locomotion for quadrupedal robots in the wild（Science Robotics 2022）— [原文 PDF](https://arxiv.org/pdf/2201.08117)
@@ -119,6 +120,7 @@ python3 scripts/resolve_paper_links.py --update-index
 ### 仿真 / 机器人学习框架
 - mjlab: A Lightweight Framework for GPU-Accelerated Robot Learning（2026）— [原文 PDF](https://arxiv.org/pdf/2601.22074.pdf)
 - Draft: A Parametric Tool for Robot Design Exploration（arXiv 2026）— [原文页面](https://arxiv.org/abs/2609.38405)
+- Elastra: A Simulation Framework for Elastic Bodies（arXiv 2026）— [原文页面](https://arxiv.org/abs/2611.15112)
 
 ### 硬件 / 机构
 - A Low Cost Modular Actuator for Dynamic Robots — [原文 PDF](https://dspace.mit.edu/handle/1721.1/118671)
@@ -247,6 +249,11 @@ python3 scripts/resolve_paper_links.py --update-index
 - 原文 PDF： https://arxiv.org/pdf/2607.02205.pdf
 - 笔记：用二自由度前馈-反馈控制器塑造真实关节的闭环响应，使其匹配仿真中的理想二阶参考动力学。策略因此无需任务级微调和学习式执行器模型即可零样本迁移；论文在单关节、7-DOF 机械臂、轮腿机器人和人形机器人上进行了验证。
 
+##### Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap（arXiv 2026）
+- 原文页面：https://arxiv.org/abs/2607.24079
+- 代码：[R4R](https://github.com/WhymustIhaveaname/R4R)
+- 笔记：将物理学中的重整化思想引入 sim-to-real：模拟器参数不该照抄真机数值，而应取依赖仿真频率和分辨率的“有效值”，才能让仿真与真机最接近。论文闭式推导了有限仿真频率下 PD 控制的有效阻尼与惯量修正，覆盖刚体 PD 控制、绳索和水下游动，并给出 4 步实操流程。
+
 #### 双足 / 通用
 
 ##### Sim-to-Real Learning of All Common Bipedal Gaits via Periodic Reward Composition（ICRA 2021）
@@ -365,6 +372,11 @@ python3 scripts/resolve_paper_links.py --update-index
 **实验**：作者先用厂商几何和关节能力重建四台 Unitree 商用机器人（G1、H2、Go2、B2），不输入任何质量、密度或惯量；孪生质量分别为原机的 111%、91%、101%、84%，几何平均倍误差 1.10×，并在 300 个构型上比较关节空间质量矩阵与重力项。随后生成 33 kg Cheetah、110 kg Bear、91 kg Giraffe 三台四足，在 mjlab 中用 PPO、10 个随机种子和 Froude 相似缩放的两阶段课程训练。三台机器人在速度、台阶高度、抗推能力和传动效率上呈现不同取舍，没有绝对最优；按腿长归一化后排名还会变化，说明设计权衡依赖评价尺度。惯性误差消融不改变能力排序。
 
 **结论与局限**：Draft 把“改参数→得到可训练 MJCF”压缩到毫秒级（12 自由度四足约 50 ms，29 自由度人形约 202 ms），适合早期设计空间探索和相对比较；但它是中等保真模型，不含设计优化器，不支持并联机构，执行器目录也只覆盖集成模块（结果更接近保守基线）。孪生实验的关节空间质量矩阵中位误差约 13%–34%，因此它更适合回答“哪个设计方向更有希望”，而不是替代 CAD 或样机验证。
+
+#### Elastra: A Simulation Framework for Elastic Bodies（arXiv 2026）
+- 原文页面：https://arxiv.org/abs/2611.15112
+- 代码：[elastra](https://github.com/WhymustIhaveaname/elastra)
+- 笔记：MuJoCo 弹性表面仿真框架，可模拟床垫、蹦床等受力会下陷回弹的支撑面，并用真实床垫的载荷曲线验证；附带在弹性表面上训练机器人（如 Unitree G1 起身）的示例。
 
 <a id="surveys" name="surveys"></a>
 ### 综述

@@ -62,6 +62,7 @@ Note: this is a quick index; for short notes/introductions, see “Notes by Lab/
 - Sim-to-Real: Learning Agile Locomotion for Quadruped Robots (2018) — [Original PDF](https://arxiv.org/pdf/1804.10332.pdf)
 - RMA: Rapid Motor Adaptation for Legged Robots (RSS 2021) — [Original PDF](https://arxiv.org/pdf/2107.04034.pdf)
 - Actuator Reality Shaping for Zero-Shot Sim-to-Real Robot Learning (2026) — [Original PDF](https://arxiv.org/pdf/2607.02205.pdf)
+- Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap (arXiv 2026) — [Original page](https://arxiv.org/abs/2607.24079)
 
 ### Perception / Mapping
 - Learning robust perceptive locomotion for quadrupedal robots in the wild (Science Robotics 2022) — [Original PDF](https://arxiv.org/pdf/2201.08117)
@@ -118,6 +119,7 @@ Note: this is a quick index; for short notes/introductions, see “Notes by Lab/
 ### Simulation / Robot-Learning Frameworks
 - mjlab: A Lightweight Framework for GPU-Accelerated Robot Learning (2026) — [Original PDF](https://arxiv.org/pdf/2601.22074.pdf)
 - Draft: A Parametric Tool for Robot Design Exploration (arXiv 2026) — [Original page](https://arxiv.org/abs/2609.38405)
+- Elastra: A Simulation Framework for Elastic Bodies (arXiv 2026) — [Original page](https://arxiv.org/abs/2611.15112)
 
 ### Hardware
 - A Low Cost Modular Actuator for Dynamic Robots — [Original PDF](https://dspace.mit.edu/handle/1721.1/118671)
@@ -246,6 +248,11 @@ Note: this is a quick index; for short notes/introductions, see “Notes by Lab/
 - Original PDF: https://arxiv.org/pdf/2607.02205.pdf
 - Notes: Uses a two-degree-of-freedom feedforward–feedback controller to shape each real joint’s closed-loop response toward the ideal second-order dynamics used in simulation. This provides a standardized actuator interface for zero-shot policy transfer without task-level fine-tuning or learned actuator models. The approach is validated on a single joint, a 7-DOF arm, a wheeled-legged robot, and a humanoid.
 
+##### Effective Parameters, Real Behavior: Renormalization for Robotics -- From Infinite Electron Mass to Sim-to-Real Gap (arXiv 2026)
+- Original page: https://arxiv.org/abs/2607.24079
+- Code: [R4R](https://github.com/WhymustIhaveaname/R4R)
+- Notes: Brings renormalization from physics to sim-to-real. Simulator parameters take "effective" values that depend on simulation frequency and resolution, so the simulation matches the real robot as closely as possible. The paper derives closed-form effective damping and inertia corrections for PD control at a finite simulation frequency. It covers rigid-body PD control, ropes, and underwater swimming, and gives a 4-step procedure.
+
 #### Bipeds / General
 
 ##### Sim-to-Real Learning of All Common Bipedal Gaits via Periodic Reward Composition (ICRA 2021)
@@ -364,6 +371,11 @@ Note: this is a quick index; for short notes/introductions, see “Notes by Lab/
 **Experiments**: The authors rebuild four commercial Unitree robots (G1, H2, Go2, B2) from vendor geometry and joint capabilities without supplying mass, density, or inertia. Twin masses are 111%, 91%, 101%, and 84% of the originals (1.10× geometric-mean fold error), and the paper compares joint-space mass matrices and gravity vectors over 300 configurations. Three quadrupeds (33 kg Cheetah, 110 kg Bear, 91 kg Giraffe) are then trained in mjlab with PPO, ten seeds, and a two-stage curriculum using Froude-similarity scaling. The three designs trade off speed, step height, push recovery, and drivetrain efficiency; no design dominates, and the ranking changes after normalization by leg length, showing that the tradeoffs depend on the evaluation scale. An inertia-error ablation does not change the capability trends.
 
 **Conclusion and limitations**: Draft reduces "edit parameters → obtain a trainable MJCF" to milliseconds (about 50 ms for a 12-joint quadruped and 202 ms for a 29-joint humanoid), making it useful for early design-space exploration and relative comparisons. It is a medium-fidelity model, however: it has no design optimizer, does not support parallel mechanisms, and its actuator catalogue covers only integrated modules (a conservative baseline). Median joint-space mass-matrix error in the twins is about 13–34%, so Draft is better suited to asking which design direction is promising than to replacing CAD or prototype validation.
+
+#### Elastra: A Simulation Framework for Elastic Bodies (arXiv 2026)
+- Original page: https://arxiv.org/abs/2611.15112
+- Code: [elastra](https://github.com/WhymustIhaveaname/elastra)
+- Notes: A MuJoCo simulation framework for elastic surfaces that sink and rebound under load, such as mattresses and trampolines, validated against real mattress load curves; includes examples of training robots on elastic surfaces (e.g., Unitree G1 stand-up).
 
 <a id="surveys" name="surveys"></a>
 ### Surveys
